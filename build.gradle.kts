@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.runtimeOnly
+
 plugins {
     java
     id("org.springframework.boot") version "4.0.1"
@@ -24,6 +26,7 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-data-elasticsearch-test")
     testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    runtimeOnly("org.springframework.boot:spring-boot-docker-compose")
 }
 
 tasks.withType<Test> {
