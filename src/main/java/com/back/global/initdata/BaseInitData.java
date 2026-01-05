@@ -2,6 +2,7 @@ package com.back.global.initdata;
 
 import com.back.domain.post.document.Post;
 import com.back.domain.post.service.PostService;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationRunner;
@@ -18,6 +19,7 @@ public class BaseInitData {
         return args->{
             work1();
             work2();
+            work3();
         };
     }
 
@@ -39,6 +41,14 @@ public class BaseInitData {
         log.debug("기존 Post 전체 조회");
         for (Post post : postService.findAll()) {
             log.debug("Existing Post: {}", post);
+        }
+    }
+
+    private void work3() {
+        log.debug("Post 단건 조회");
+        for (Post post : postService.findAll()) {
+            Optional<Post> found = postService.findById(post.getId());
+            log.debug("조회된 Post: {}", found);
         }
     }
 }

@@ -4,6 +4,7 @@ import java.time.OffsetDateTime;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.DateFormat;
@@ -13,6 +14,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 
 @Document(indexName = "posts")
 @NoArgsConstructor(access = AccessLevel.PROTECTED) @AllArgsConstructor(access = AccessLevel.PRIVATE)
+@Getter
 @Builder(access = AccessLevel.PRIVATE)
 public class Post {
     @Id
