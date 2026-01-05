@@ -29,4 +29,10 @@ public class PostService {
         return postRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Post not found id : " + id));
     }
+
+    public Post update(String id, String title, String content) {
+        Post post = findById(id);
+        post.update(title, content);
+        return postRepository.save(post);
+    }
 }
