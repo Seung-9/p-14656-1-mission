@@ -4,6 +4,9 @@ spring:
   output:
     ansi:
       enabled: ALWAYS
+  jackson:
+    serialization:
+      fail-on-empty-beans: false # 빈 객체 직렬화 시 예외 발생 방지
 logging:
   level:
     com:
