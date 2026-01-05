@@ -41,6 +41,20 @@ public class Post {
                 .title(title)
                 .content(content)
                 .author(author)
+                .createdAt(OffsetDateTime.now())
+                .lastModifiedAt(OffsetDateTime.now())
                 .build();
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", author='" + author + '\'' +
+                ", createdAt=" + createdAt +
+                ", lastModifiedAt=" + lastModifiedAt +
+                '}';
     }
 }
